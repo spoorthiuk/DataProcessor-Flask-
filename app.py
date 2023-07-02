@@ -30,13 +30,14 @@ def showData():
     return render_template('show_csv_data.html',
                            data_var=uploaded_df_html)
 
-@app.route('/show_head')
+@app.route('/show_head',methods=['POST'])
 def showHead():
     # Uploaded File Path
     data_file_path = session.get('uploaded_data_file_path', None)
     # read csv
+    row_count = request.form['row_count']
     uploaded_df = pd.read_csv(data_file_path,
-                              encoding='unicode_escape').head()
+                              encoding='unicode_escape').head(int(row_count))
     # Converting to html Table
     uploaded_df_html = uploaded_df.to_html()
     return render_template('show_csv_head.html',

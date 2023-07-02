@@ -22,7 +22,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <img class="navbar-brand" src = "../assets/dataProcessor.png" >
+      <img class="navbar-brand" src = "../static/dataProcessor.png" >
       <p class="navbar-brand">DataPreprocessor</p>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
@@ -41,15 +41,18 @@
             <input class="form-control" type="file" name="file" accept=".csv">
             <br>
             <p style="color:green;">File Uploaded</p>
+            <br>
             <input class = "btn btn-info" type = "submit" value="Upload">    
         </form>
-        <form action="/show_data" target="_blank">
+        <!--form action="/show_data" target="_blank">
             <br>
             <input  class = "btn btn-info" type="submit" value="Show CSV"/>
-        </form>
-        <form action="/show_head" target="_blank">
+        </form-->
+        <form method="POST" action="/show_head" target="_blank">
             <br>
-            <input  class = "btn btn-info" type="submit" value="Show Head"/>
+            <input type="number" name = "row_count" placeholder="Number Of Rows" style="color: black;"/>
+            <br>
+            <input  class = "btn btn-info" type="submit" value="Show Rows"/>
         </form>
         <form action="/get_data_description" target="_blank">
             <br>
