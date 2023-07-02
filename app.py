@@ -5,18 +5,23 @@ import libraries as lib
 import requests
 
 app = Flask(__name__)
+DATA_FILENAME = ""
 
 app.secret_key = 'This is your secret key to utilize session in Flask'
 
-@app.route('/',methods=['GET','POST'])
+@app.route('/')
+def homePage():
+    return render_template("home_page.html")
+
+@app.route('/upload_and_analyze',methods=['GET','POST'])
 def uploadFile():
     if request.method == 'POST':
         f = request.files.get('file')
-        data_filename = secure_filename(f.filename)
-        f.save(data_filename)
-        session['uploaded_data_file_path'] = data_filename
-        return render_template("home_page_after.html")
-    return render_template("home_page_before.html")
+        DATA_FILENAME = secure_filename(f.filename)
+        f.save(DATA_FILENAME)
+        session['uploaded_data_file_path'] = DATA_FILENAME
+        return render_template("upload_and_analyze_after.html")
+    return render_template("upload_and_analyze_before.html")
 
 @app.route('/show_data')
 def showData():
@@ -83,15 +88,6 @@ def showColumnAnalysis():
             if(key2 == 'green'):
                 html_output += '<tr><td style="color: green">{}</td></tr>'.format(value2)
     html_output += '</table>'
-
-    
-    url = 'http://127.0.0.1:5000/assets/dataProcessor.png'
-    response = requests.head(url)
-
-    if response.status_code == 200:
-        print("File exists!")
-    else:
-        print("File does not exist.")
     
     return render_template('show_column_analysis.html',
                            data_var=html_output)

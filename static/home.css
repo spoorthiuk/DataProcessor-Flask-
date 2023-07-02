@@ -1,7 +1,7 @@
 body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
-    color: #f5f6f7;
+    background-color: #b9eae1d5;
   }
   .bodyTable {
     font: 12px Montserrat, sans-serif;
@@ -25,20 +25,16 @@ body {
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
   .bg-1 { 
-    background-color: #1abc9c; /* Green */
-    color: #ffffff;
+    background-color: #a2dbd1d5; /* Green */
+    color: #504b4b;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
   }
-  .bg-2 { 
-    background-color: #474e5d; /* Dark Blue */
-    color: #ffffff;
-  }
-  .bg-3 { 
-    background-color: #ffffff; /* White */
-    color: #555555;
-  }
-  .bg-4 { 
-    background-color: #2f2f2f; /* Black Gray */
-    color: #fff;
+  .bg2 {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #000;
   }
   .container-fluid {
     padding-top: 70px;
@@ -53,7 +49,67 @@ body {
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
+    font-weight: bold;
   }
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
+    text-decoration: none;
+    border-bottom: 3px solid
   }
+
+  .column {
+  float: left;
+  width: 33.3%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card1 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #edf3f2f8;
+  cursor: pointer;
+}
+
+.card1 img{
+    width: 250px;
+    height: 200px;
+}
+
+.card2 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #edf3f2f8;
+    cursor: pointer;
+  }
+.card2 img{
+    width: 250px;
+    height: 200px;
+}
+  
+
+  .card3 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #edf3f2f8;
+    cursor: pointer;
+  }
+  .card3 img{
+    width: 300px;
+    height: 200px;
+    }
