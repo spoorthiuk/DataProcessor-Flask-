@@ -22,6 +22,14 @@ body {
     height: 100%;
     width: 100%;
   }
+  .form-control{
+    width: 500px;
+  }
+  .show_analysis{
+    font-size: 30px;
+    text-align: left;
+    font-weight: bold;
+  }
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
   .bg-1 { 

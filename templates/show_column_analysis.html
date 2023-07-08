@@ -23,8 +23,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <div class="navbar-brand">
-      <img src = "../static/dataProcessor.png" >
+      <img class="navbar-brand" src = "../static/dataProcessor.png" >
       <p class="navbar-brand">DataProcessor</p>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
@@ -36,9 +35,11 @@
     </div>
   </div>
 </nav>
-<td>
+<div  style="padding-left:20px;text-align: left;">
+    <td class="show_analysis">
     <br>
-{{ data_var|safe }}
-</td>
+    {{ data_var|safe }}
+    </td>
+    </div>
     </body>
 </html>

@@ -14,18 +14,18 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" >
   <div class="container">
-    <div class="navbar-header">
+    <div class="navbar-header" >
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <img class="navbar-brand" src = "../static/dataProcessor.png" >
+      <img class="navbar-brand" src = "../static/dataProcessor.png">
       <p class="navbar-brand">DataProcessor</p>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+    <div class="collapse navbar-collapse" id="myNavbar" >
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Analyze</a></li>
         <li><a href="#">Process</a></li>
@@ -37,11 +37,11 @@
 
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
-        <form method = "POST" enctype="multipart/form-data" action = "/">
+        <form method = "POST" enctype="multipart/form-data" action = "/upload_and_analyze" >
+            <p style="padding-left:32%;">
             <input class="form-control" type="file" name="file" accept=".csv">
-            <br>
+            </p>
             <p style="color:green;">File Uploaded</p>
-            <br>
             <input class = "btn btn-info" type = "submit" value="Upload">    
         </form>
         <!--form action="/show_data" target="_blank">
@@ -49,17 +49,13 @@
             <input  class = "btn btn-info" type="submit" value="Show CSV"/>
         </form-->
         <form method="POST" action="/show_head" target="_blank">
-            <br>
-            <input type="number" name = "row_count" placeholder="Number Of Rows" style="color: black;"/>
-            <br>
+            <input type="number" name = "row_count" placeholder="Number Of Rows" style="color: black;height:30px;font-size:20px"/>
             <input  class = "btn btn-info" type="submit" value="Show Rows"/>
         </form>
         <form action="/get_data_description" target="_blank">
-            <br>
             <input  class = "btn btn-info" type="submit" value="Data Description"/>
         </form>
         <form action="/get_column_analysis" target="_blank">
-            <br>
             <input  class = "btn btn-info" type="submit" value="Column Analysis"/>
         </form>
 </div>
